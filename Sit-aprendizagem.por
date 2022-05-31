@@ -18,25 +18,7 @@ programa
 			leia(opc)
 			escolha(opc){
 				caso 1:
-					se (pos == qntd) {
-						escreva("\n")
-						escreva("\nNúmero de usuários já cadastrados")
-						escreva("\n")
-						pare
-					} senao {
-						para (inteiro cont = 1; cont <= qntd; cont++) {
-							escreva("\nUSUÁRIO ", cont)
-							escreva("\nNome: ")
-							leia(nome)
-							escreva("\nIdade: ")
-							leia(idade)
-							escreva("\n")
-							nomes[pos] = nome
-							idades[pos] = idade
-							pos++
-						}
-						pare
-					}
+					pare
 				caso 2:
 						
 					pare
@@ -52,7 +34,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 715; 
+ * @POSICAO-CURSOR = 396; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = {pos, 7, 28, 3}-{nomes, 11, 9, 5};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
