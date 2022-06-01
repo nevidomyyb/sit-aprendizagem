@@ -3,6 +3,14 @@ programa
 	
 	funcao inicio()
 	{
+		/* Declaração das variáveis:
+		 *  nome: onde será armazenado temporariamente o nome de cada usuário cadastrado
+		 *  idade: onde será armazenado temporariamente a idade de cada usuário cadastrado
+		 *  qntd: número de usuários que será cadastrado nessa execução do programa
+		 *  opc: opção digitada pelo usuário, é verificada no "escolha"
+		 *  pos: será utilizada posteriormente para armazenar os nomes e idade nos vetores
+		 *  continuar: controle para repetir o menu com as opções
+		 */
 		cadeia nome
 		inteiro idade, qntd, opc, pos = 0
 		logico continuar = verdadeiro
@@ -34,9 +42,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 396; 
+ * @POSICAO-CURSOR = 349; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {pos, 7, 28, 3}-{nomes, 11, 9, 5};
+ * @SIMBOLOS-INSPECIONADOS = {pos, 15, 28, 3}-{nomes, 19, 9, 5};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */

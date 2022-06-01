@@ -25,3 +25,4 @@
     <h6>git push -u origin "seu-nome" - <b>Troque "seu-nome" pelo nome da sua branch, que criamos anteriormente</b><h6>
     <h6><b>Após realizar essa série de códigos o seu repositório atual irá ser enviado ao GitHub</b></h6>
 <ol>
+<img src=”C:\Users\pedro\Desktop\Repositorions\sit-aprendizagem\Fluxograma.jpeg”>
