@@ -1,6 +1,8 @@
-#Situação de Aprendizagem
-######Resolução do desafio
-
-###Modificar e Enviar
-1.**Clone este repositório
-######git clone https://github.com/nevidomyyb/sit-aprendizagem.git
+<h1 align="center">Situação de Aprendizagem</h1>
+<h6>Resolução do Desafio</h6>
+<h6>Instruções a seguir</h6>
+<h3 algin="center">Modificar e Enviar</h3>
+<ol>
+    <li><b>Clone este repositório</b></li>
+    <h6></h6>
+<ol>
