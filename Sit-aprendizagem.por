@@ -26,9 +26,18 @@ programa
 			leia(opc)
 			escolha(opc){
 				caso 1:
+					/*
+					 * realizar uma verificação se há espaços vazios nos vetores para cadastrar um novo usuário
+					 * criar um "para" para cadastrar o número correto de usuarios definidos na variável "qntd"
+					 * receber o valor do nome e idade e posicionalos no local correto dentro dos vetores
+					 */
 					pare
 				caso 2:
-						
+					/*
+					 * utilizar a função "para" para escrever na tela o nome de cada usuário e sua respectiva idade
+					 * utilizando os vetores
+					 */
+				
 					pare
 				caso 3:
 					continuar = falso
@@ -42,7 +51,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 349; 
+ * @POSICAO-CURSOR = 739; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = {pos, 15, 28, 3}-{nomes, 19, 9, 5};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
