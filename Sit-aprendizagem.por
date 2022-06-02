@@ -23,6 +23,7 @@ programa
 			idades[l] = 0
 		}
 		enquanto (continuar) {
+			escreva("\n")
 			escreva("\n1: Cadastrar novo Usuário")
 			escreva("\n2: Listar todos os usuários cadastrados")
 			escreva("\n3: Sair do programa")
@@ -65,11 +66,14 @@ programa
 					 * utilizando os vetores
 					 */
 					inteiro tamanho = u.numero_elementos(nomes)
+					escreva("\nUSUÁRIOS CADASTRADOS")
 					para (inteiro contador = 0; contador<tamanho; contador++) {
 						se (nomes[contador] == "") {
 							pare
 						} senao {
-							escreva("\nNome: ", nomes[contador], " Idade: ", idades[contador])
+								escreva("\n[",contador+1,"]")								
+								escreva(nomes[contador], " tem ")
+								escreva(idades[contador], " anos")
 						}
 					}
 					pare
@@ -85,7 +89,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 807; 
+ * @POSICAO-CURSOR = 2488; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = {pos, 15, 28, 3}-{nomes, 19, 9, 5}-{idades, 20, 10, 6};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
