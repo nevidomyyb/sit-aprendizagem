@@ -1,6 +1,6 @@
 programa
 {
-	
+	inclua biblioteca Util --> u
 	funcao inicio()
 	{
 		/* Declaração das variáveis:
@@ -8,7 +8,7 @@ programa
 		 *  idade: onde será armazenado temporariamente a idade de cada usuário cadastrado
 		 *  qntd: número de usuários que será cadastrado nessa execução do programa
 		 *  opc: opção digitada pelo usuário, é verificada no "escolha"
-		 *  pos: será utilizada posteriormente para armazenar os nomes e idade nos vetores
+		 *  pos: será utilizada posteriormente para identificar a posição dos vetores
 		 *  continuar: controle para repetir o menu com as opções
 		 */
 		cadeia nome
@@ -28,6 +28,7 @@ programa
 			escreva("\n3: Sair do programa")
 			escreva("\n")
 			leia(opc)
+		
 			escolha(opc){
 				caso 1:
 					/*
@@ -35,13 +36,42 @@ programa
 					 * realizar uma verificação se há espaços vazios nos vetores para cadastrar um novo usuário
 					 * receber o valor do nome e idade e posicionalos no local correto dentro dos vetores
 					 */
+					para (inteiro contador = 0; contador < qntd; contador++) {
+						se (nomes[pos] != "" e idades[pos] != 0) {
+							escreva("\nSem vagas para serem cadastradas")
+							pare
+						} 
+						senao se (qntd  == pos) {
+								escreva("\nQuantidade de pessoas já cadastradas")
+								pare
+							} 
+							senao {
+								escreva("\nCADASTRO ", contador+1)
+								escreva("\nNome: ")
+								leia(nome)
+								escreva("\nIdade: ")
+								leia(idade)
+								nomes[pos] = nome
+								idades[pos] = idade
+								pos++
+								escreva("\n----------------")
+							
+						}
+					}
 					pare
 				caso 2:
 					/*
 					 * utilizar a função "para" para escrever na tela o nome de cada usuário e sua respectiva idade
 					 * utilizando os vetores
 					 */
-				
+					inteiro tamanho = u.numero_elementos(nomes)
+					para (inteiro contador = 0; contador<tamanho; contador++) {
+						se (nomes[contador] == "") {
+							pare
+						} senao {
+							escreva("\nNome: ", nomes[contador], " Idade: ", idades[contador])
+						}
+					}
 					pare
 				caso 3:
 					continuar = falso
@@ -55,7 +85,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1069; 
+ * @POSICAO-CURSOR = 807; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = {pos, 15, 28, 3}-{nomes, 19, 9, 5}-{idades, 20, 10, 6};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
