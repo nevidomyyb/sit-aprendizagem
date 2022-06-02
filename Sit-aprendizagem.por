@@ -18,6 +18,10 @@ programa
 		leia(qntd)
 		cadeia nomes[100]
 		inteiro idades[100]
+		para (inteiro l = 0; l<100; l++){
+			nomes[l] = ""
+			idades[l] = 0
+		}
 		enquanto (continuar) {
 			escreva("\n1: Cadastrar novo Usuário")
 			escreva("\n2: Listar todos os usuários cadastrados")
@@ -27,8 +31,8 @@ programa
 			escolha(opc){
 				caso 1:
 					/*
-					 * realizar uma verificação se há espaços vazios nos vetores para cadastrar um novo usuário
 					 * criar um "para" para cadastrar o número correto de usuarios definidos na variável "qntd"
+					 * realizar uma verificação se há espaços vazios nos vetores para cadastrar um novo usuário
 					 * receber o valor do nome e idade e posicionalos no local correto dentro dos vetores
 					 */
 					pare
@@ -51,9 +55,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 739; 
+ * @POSICAO-CURSOR = 1069; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {pos, 15, 28, 3}-{nomes, 19, 9, 5};
+ * @SIMBOLOS-INSPECIONADOS = {pos, 15, 28, 3}-{nomes, 19, 9, 5}-{idades, 20, 10, 6};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
