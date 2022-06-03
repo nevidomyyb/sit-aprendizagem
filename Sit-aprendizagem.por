@@ -1,6 +1,9 @@
 programa
 {
 	inclua biblioteca Util --> u
+	inclua biblioteca Texto --> t
+	inclua biblioteca Arquivos --> a
+	
 	funcao inicio()
 	{
 		/* Declaração das variáveis:
@@ -11,16 +14,38 @@ programa
 		 *  pos: será utilizada posteriormente para identificar a posição dos vetores
 		 *  continuar: controle para repetir o menu com as opções
 		 */
-		cadeia nome
-		inteiro idade, qntd, opc, pos = 0
+		cadeia nome, idade
+		inteiro qntd, opc, pos = 0, posx = 0
 		logico continuar = verdadeiro
 		escreva("\nQuantos usuários serão cadastrados?")
 		leia(qntd)
 		cadeia nomes[100]
-		inteiro idades[100]
+		cadeia idades[100]
 		para (inteiro l = 0; l<100; l++){
 			nomes[l] = ""
-			idades[l] = 0
+			idades[l] = "0"
+		}
+		inteiro enderecoL = a.abrir_arquivo("usuarios.txt", a.MODO_LEITURA)
+		para (inteiro c =0; c<100; c++) {
+			cadeia linha = a.ler_linha(enderecoL)
+			se (linha == "") {
+				pare
+			} senao {
+				
+				inteiro tamanhoL = t.numero_caracteres(linha)
+				inteiro posicao = t.posicao_texto(",", linha, 0)
+				nomes[c] = t.extrair_subtexto(linha, 0, posicao)
+				idades[c] = t.extrair_subtexto(linha, posicao+1, tamanhoL)
+			}
+		}
+		a.fechar_arquivo(enderecoL)
+		para (inteiro l = 0; l<100; l++) {
+			se (nomes[posx] == "") {
+				posx = posx
+				pare
+			} senao {
+				posx++
+			}
 		}
 		enquanto (continuar) {
 			escreva("\n")
@@ -37,8 +62,11 @@ programa
 					 * realizar uma verificação se há espaços vazios nos vetores para cadastrar um novo usuário
 					 * receber o valor do nome e idade e posicionalos no local correto dentro dos vetores
 					 */
+					se(qntd == 0){
+						escreva("\nVocê decidiu cadastrar 0 pessoas")
+					}
 					para (inteiro contador = 0; contador < qntd; contador++) {
-						se (nomes[pos] != "" e idades[pos] != 0) {
+						se (nomes[posx+1] != "" e idades[posx+1] != "0") {
 							escreva("\nSem vagas para serem cadastradas")
 							pare
 						} 
@@ -52,9 +80,10 @@ programa
 								leia(nome)
 								escreva("\nIdade: ")
 								leia(idade)
-								nomes[pos] = nome
-								idades[pos] = idade
+								nomes[posx] = nome
+								idades[posx] = idade
 								pos++
+								posx++
 								escreva("\n----------------")
 							
 						}
@@ -82,6 +111,17 @@ programa
 					pare
 			}
 		}
+					inteiro endereco = a.abrir_arquivo("usuarios.txt", a.MODO_ESCRITA)
+					inteiro tamanho = u.numero_elementos(nomes)
+					para (inteiro c = 0; c<tamanho; c++) {
+						se (nomes[c] == "" ou idades[c] == "0"){
+							pare	
+						} senao {
+							cadeia linha = nomes[c]+","+idades[c]
+							a.escrever_linha(linha, endereco)
+						}
+					}
+					a.fechar_arquivo(endereco)
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -89,9 +129,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2488; 
+ * @POSICAO-CURSOR = 2033; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {pos, 15, 28, 3}-{nomes, 19, 9, 5}-{idades, 20, 10, 6};
+ * @SIMBOLOS-INSPECIONADOS = {qntd, 18, 10, 4}-{pos, 18, 21, 3}-{posx, 18, 30, 4}-{nomes, 22, 9, 5}-{idades, 23, 9, 6};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
