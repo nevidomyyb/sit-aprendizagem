@@ -3,25 +3,29 @@ programa
 	
 	funcao inicio()
 	{
-		/* Declaração das variáveis:
-		 *  nome: onde será armazenado temporariamente o nome de cada usuário cadastrado
-		 *  idade: onde será armazenado temporariamente a idade de cada usuário cadastrado
-		 *  qntd: número de usuários que será cadastrado nessa execução do programa
-		 *  opc: opção digitada pelo usuário, é verificada no "escolha"
-		 *  pos: será utilizada posteriormente para armazenar os nomes e idade nos vetores
-		 *  continuar: controle para repetir o menu com as opções
+		/*
+		 * nome: recebe o nome do cadastro atual
+		 * idade: recebe a idade do cadastro atual
+		 * qntd: referente a quantidade de cadastro que será feito nessa execução
+		 * opc: escolha do usuário no menu
+		 * pos: usado para saber se já foram cadastradas a quantidade certa de pessoas
+		 * usuario: checar na listagem a posição
+		 * idades e nomes: são os vetores de cadastro
+		 * continuar: usado para continuar o enquanto ou não, dependendo da escolha do usuário
 		 */
-		cadeia nome
-		inteiro idade, qntd, opc, pos = 0
+		cadeia nome, nomes[100]
+		inteiro idade, qntd, opc, pos = 0, usuario = 0, idades[100]
 		logico continuar = verdadeiro
+		//Pergunta inicial de quantos usuários vão ser cadastrados nessa execução do programa
 		escreva("\nQuantos usuários serão cadastrados?")
 		leia(qntd)
-		cadeia nomes[100]
-		inteiro idades[100]
+		//Definimos os vetores nomes com "" para nulo e idades com 0 para nulo também, 
+		//é usado na verificação se existem espaços vazios nos vetores para o cadastro
 		para (inteiro l = 0; l<100; l++){
 			nomes[l] = ""
 			idades[l] = 0
 		}
+		//Inicio da estrutura de repetição com o menu sendo mostrado
 		enquanto (continuar) {
 			escreva("\n1: Cadastrar novo Usuário")
 			escreva("\n2: Listar todos os usuários cadastrados")
@@ -29,21 +33,35 @@ programa
 			escreva("\n")
 			leia(opc)
 			escolha(opc){
+				// Opção de cadastro
 				caso 1:
-					/*
-					 * criar um "para" para cadastrar o número correto de usuarios definidos na variável "qntd"
-					 * realizar uma verificação se há espaços vazios nos vetores para cadastrar um novo usuário
-					 * receber o valor do nome e idade e posicionalos no local correto dentro dos vetores
-					 */
+                         se(qntd == pos){
+                          escreva("\n Total de pessoas já cadastradas")
+                          pare
+                         }
+                         se(nomes[pos] == "" e idades[pos] == 0){
+                         	para(inteiro c=0; c<qntd; c++){
+                         		escreva("\nCadastro[",c+1,"]")
+	                         	escreva("\n Escreva o seu nome:")
+	                         	leia(nomes[c])
+	                         	escreva("\n Escreva sua idade:")
+	                         	leia(idades[c])
+	                         	pos++
+                         	}
+                         }
 					pare
 				caso 2:
-					/*
-					 * utilizar a função "para" para escrever na tela o nome de cada usuário e sua respectiva idade
-					 * utilizando os vetores
-					 */
-				
+					// Opção de listar os cadastros
+					escreva("\nLista de cadastrados.....")
+					para(usuario=0;usuario<100;usuario++){
+						se(nomes[usuario] != "" e idades[usuario] != 0){
+							escreva("\n",nomes[usuario],": ", idades[usuario])
+						}
+					}
+					escreva("\n")
 					pare
 				caso 3:
+					// Opção de sair do programa
 					continuar = falso
 					pare
 			}
@@ -55,9 +73,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1069; 
+ * @POSICAO-CURSOR = 2318; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {pos, 15, 28, 3}-{nomes, 19, 9, 5}-{idades, 20, 10, 6};
+ * @SIMBOLOS-INSPECIONADOS = {nomes, 16, 15, 5}-{pos, 17, 28, 3}-{idades, 17, 50, 6};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
