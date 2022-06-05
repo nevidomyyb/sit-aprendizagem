@@ -28,33 +28,22 @@ programa
 			leia(opc)
 			escolha(opc){
 				caso 1:
-				enquanto(usuario<=qntd e idade<=qntd){
-					escreva("digite o nome do usuario : ")
-					leia(nomes[usuario])
-
-					escreva("digite a idade : ")
-					leia(idades[idade])
-
-					idade++
-					usuario++
+				enquanto(usuario<qntd e idade<qntd){
+						escreva("digite o nome do usuario : ")
+						leia(nomes[usuario])
+						escreva("digite a idade : ")
+						leia(idades[idade])
+						idade++
+						usuario++
 					}
-			
 					pare
-			
 				caso 2:
 					escreva("\nLista de cadastrados.....\n")
-					para(usuario=0;usuario<100;usuario++){
-					se(nomes[usuario] != ""){
-					escreva("\n",nomes[usuario])
+						para(usuario=0;usuario<100;usuario++){
+							se(nomes[usuario] != "" e idades[usuario] != 0){
+								escreva("\n",nomes[usuario],": ", idades[usuario])
+						}
 					}
-					}
-					para(idade=0;idade<100;idade++){
-					se(idades[idade] != 0){
-					escreva("\n",idades[idade])
-					}
-					}
-					
-				
 					pare
 				caso 3:
 					continuar = falso
@@ -68,9 +57,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1556; 
+ * @POSICAO-CURSOR = 1417; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = ;
+ * @SIMBOLOS-INSPECIONADOS = {nomes, 19, 9, 5}-{idades, 20, 10, 6};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
