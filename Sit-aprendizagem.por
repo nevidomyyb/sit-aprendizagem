@@ -37,6 +37,7 @@ programa
 				caso 1:
                          se(qntd == pos){
                           escreva("\n Total de pessoas já cadastradas")
+                          escreva("\n")
                           pare
                          }
                          se(nomes[pos] == "" e idades[pos] == 0){
@@ -73,7 +74,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2318; 
+ * @POSICAO-CURSOR = 1461; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = {nomes, 16, 15, 5}-{pos, 17, 28, 3}-{idades, 17, 50, 6};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
