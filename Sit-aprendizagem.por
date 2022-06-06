@@ -14,7 +14,7 @@ programa
 		 * continuar: usado para continuar o enquanto ou não, dependendo da escolha do usuário
 		 */
 		cadeia nome, nomes[100]
-		inteiro idade, qntd, opc, pos = 0, usuario = 0, idades[100]
+		inteiro idade, qntd, opc, pos = 0, usuario = 0, idades[100], c = 0
 		logico continuar = verdadeiro
 		//Pergunta inicial de quantos usuários vão ser cadastrados nessa execução do programa
 		escreva("\nQuantos usuários serão cadastrados?")
@@ -41,13 +41,14 @@ programa
                           pare
                          }
                          se(nomes[pos] == "" e idades[pos] == 0){
-                         	para(inteiro c=0; c<qntd; c++){
+                         	se ( c <= qntd) {
                          		escreva("\nCadastro[",c+1,"]")
 	                         	escreva("\n Escreva o seu nome:")
 	                         	leia(nomes[c])
 	                         	escreva("\n Escreva sua idade:")
 	                         	leia(idades[c])
 	                         	pos++
+	                         	c++
                          	}
                          }
 					pare
@@ -74,7 +75,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1461; 
+ * @POSICAO-CURSOR = 1977; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = {nomes, 16, 15, 5}-{pos, 17, 28, 3}-{idades, 17, 50, 6};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
