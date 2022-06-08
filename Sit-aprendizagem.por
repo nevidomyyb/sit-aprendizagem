@@ -26,6 +26,7 @@ programa
 			idades[l] = 0
 		}
 		//Inicio da estrutura de repetição com o menu sendo mostrado
+		
 		enquanto (continuar) {
 			escreva("\n1: Cadastrar novo Usuário")
 			escreva("\n2: Listar todos os usuários cadastrados")
@@ -36,9 +37,9 @@ programa
 				// Opção de cadastro
 				caso 1:
                          se(qntd == pos){
-                          escreva("\n Total de pessoas já cadastradas")
-                          escreva("\n")
-                          pare
+                         	escreva("\n Total de pessoas já cadastradas")
+                          	escreva("\n")
+                          	pare
                          }
                          se(nomes[pos] == "" e idades[pos] == 0){
                          	se ( c <= qntd) {
@@ -51,7 +52,7 @@ programa
 	                         	c++
                          	}
                          }
-					pare
+                         pare
 				caso 2:
 					// Opção de listar os cadastros
 					escreva("\nLista de cadastrados.....")
@@ -75,9 +76,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1977; 
+ * @POSICAO-CURSOR = 2215; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {nomes, 16, 15, 5}-{pos, 17, 28, 3}-{idades, 17, 50, 6};
+ * @SIMBOLOS-INSPECIONADOS = {nomes, 16, 15, 5}-{idades, 17, 50, 6};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
