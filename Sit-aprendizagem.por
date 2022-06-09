@@ -25,8 +25,19 @@ programa
 			nomes[l] = ""
 			idades[l] = 0
 		}
-		//Inicio da estrutura de repetição com o menu sendo mostrado
+
+		//Verificar se o arquivo existe, se não existir criar um novo, se existir abrir no modo leitura
+		//E com ele aberto no modo leitura ler todas as linhas e separar o nome e a idade dentro dos vetores
 		
+		
+
+		
+
+
+
+
+		
+		//Inicio da estrutura de repetição com o menu sendo mostrado
 		enquanto (continuar) {
 			escreva("\n1: Cadastrar novo Usuário")
 			escreva("\n2: Listar todos os usuários cadastrados")
@@ -64,7 +75,9 @@ programa
 					escreva("\n")
 					pare
 				caso 3:
-					// Opção de sair do programa
+					//Modificar para salvar os vetores dentro do arquivo
+
+					
 					continuar = falso
 					pare
 			}
@@ -76,7 +89,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2215; 
+ * @POSICAO-CURSOR = 426; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = {nomes, 16, 15, 5}-{idades, 17, 50, 6};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
