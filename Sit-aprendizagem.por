@@ -14,13 +14,13 @@ programa
 		 *  pos: será utilizada posteriormente para identificar a posição dos vetores
 		 *  continuar: controle para repetir o menu com as opções
 		 */
-		cadeia nome, idade
-		inteiro qntd, opc, pos = 0, posx = 0
+		inteiro qntd, opc, posx = 0
 		logico continuar = verdadeiro
+		cadeia arquivos[100]
 		escreva("\nQuantos usuários serão cadastrados?")
 		leia(qntd)
-		cadeia nomes[100]
-		cadeia idades[100]
+		cadeia nomes[1000]
+		cadeia idades[1000]
 		para (inteiro l = 0; l<100; l++){
 			nomes[l] = ""
 			idades[l] = "0"
@@ -31,7 +31,6 @@ programa
 			se (linha == "") {
 				pare
 			} senao {
-				
 				inteiro tamanhoL = t.numero_caracteres(linha)
 				inteiro posicao = t.posicao_texto(",", linha, 0)
 				nomes[c] = t.extrair_subtexto(linha, 0, posicao)
@@ -54,39 +53,19 @@ programa
 			escreva("\n3: Sair do programa")
 			escreva("\n")
 			leia(opc)
-		
 			escolha(opc){
 				caso 1:
-					/*
-					 * criar um "para" para cadastrar o número correto de usuarios definidos na variável "qntd"
-					 * realizar uma verificação se há espaços vazios nos vetores para cadastrar um novo usuário
-					 * receber o valor do nome e idade e posicionalos no local correto dentro dos vetores
-					 */
-					se(qntd == 0){
-						escreva("\nVocê decidiu cadastrar 0 pessoas")
-					}
-					para (inteiro contador = 0; contador < qntd; contador++) {
-						se (nomes[posx+1] != "" e idades[posx+1] != "0") {
-							escreva("\nSem vagas para serem cadastradas")
-							pare
-						} 
-						senao se (qntd  == pos) {
-								escreva("\nQuantidade de pessoas já cadastradas")
-								pare
-							} 
-							senao {
-								escreva("\nCADASTRO ", contador+1)
-								escreva("\nNome: ")
-								leia(nome)
-								escreva("\nIdade: ")
-								leia(idade)
-								nomes[posx] = nome
-								idades[posx] = idade
-								pos++
-								posx++
-								escreva("\n----------------")
-							
-						}
+					se (qntd == posx) {
+						escreva("\nTotal de pessoas já cadastradas")
+						pare
+					} senao {
+						escreva("\nCADASTRO [",posx+1,"]")
+						escreva("\nNome: ")
+						leia(nomes[posx])
+						escreva("\nIdade: ")
+						leia(idades[posx])
+						posx++
+						limpa()
 					}
 					pare
 				caso 2:
@@ -129,9 +108,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2033; 
+ * @POSICAO-CURSOR = 1125; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {qntd, 18, 10, 4}-{pos, 18, 21, 3}-{posx, 18, 30, 4}-{nomes, 22, 9, 5}-{idades, 23, 9, 6};
+ * @SIMBOLOS-INSPECIONADOS = {arquivos, 19, 9, 8};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
